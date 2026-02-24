@@ -2,7 +2,7 @@
 +++++++++++++++++++++++++++++++++++++++
 git details -
 anshudevops2012@gmail.com
-$24012019@Ak
+$240*****@Ak
 +++++++++++++++++++++++++++++++++++++++
 
 STEP 1 — Install Git (if not already installed)
