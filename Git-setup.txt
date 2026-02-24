@@ -1,0 +1,103 @@
+
++++++++++++++++++++++++++++++++++++++++
+git details -
+anshudevops2012@gmail.com
+$24012019@Ak
++++++++++++++++++++++++++++++++++++++++
+
+STEP 1 — Install Git (if not already installed)
+If Git is not installed:
+
+Download Git for Windows:
+https://git-scm.com/download/win
+Install it with default settings.
+Open Git Bash (search in Start Menu).
+
+
+✅ STEP 2 — Configure Git with your new Git account
+Run these commands in Git Bash:
+Shellgit config --global user.name "Your Git Username"git config --global user.email "your-email@example.com"Show more lines
+To verify:
+Shellgit config --listShow more lines
+
+✅ STEP 3 — Generate SSH Key (recommended)
+This allows your Windows PC to connect to GitHub without entering a password every time.
+In Git Bash:
+Shellssh-keygen -t ed25519 -C "your-email@example.com"Show more lines
+Press Enter for all prompts (default location is ok).
+Add the key to SSH agent:
+Shelleval "$(ssh-agent -s)"ssh-add ~/.ssh/id_ed25519Show more lines
+
+✅ STEP 4 — Add your SSH key to your GitHub account
+
+Copy your public key:
+
+Shellcat ~/.ssh/id_ed25519.pubShow more lines
+
+Go to GitHub → Settings → SSH and GPG Keys
+Click New SSH Key
+Paste the key
+Save
+
+
+✅ STEP 5 — Create a new repository on GitHub
+
+Go to GitHub
+Click New Repository
+Give the repo a name (example: my-first-repo)
+Choose:
+
+Public or Private
+DO NOT initialize with README (optional but ideal when pushing existing files)
+
+
+Click Create Repository
+
+You will now see GitHub showing SSH URL like:
+git@github.com:YourUserName/my-first-repo.git
+
+Copy this — you’ll need it.
+
+✅ STEP 6 — Go to your folder on your Windows machine
+Navigate to the folder where your files are stored.
+Example:
+Shellcd /c/Users/YourName/Documents/myprojectShow more lines
+
+✅ STEP 7 — Initialize Git in that folder
+Shellgit initShow more lines
+
+✅ STEP 8 — Add your Git remote URL
+Paste the SSH URL you copied earlier:
+Shellgit remote add origin git@github.com:YourUserName/my-first-repo.gitShow more lines
+To confirm:
+Shellgit remote -v``Show more lines
+You should see:
+origin  git@github.com:YourUserName/my-first-repo.git (fetch)
+origin  git@github.com:YourUserName/my-first-repo.git (push)
+
+
+✅ STEP 9 — Add your files to Git
+Shellgit add .Show more lines
+This adds all files.
+
+✅ STEP 10 — Commit your files
+Shellgit commit -m "Initial commit"Show more lines
+
+✅ STEP 11 — Push to GitHub
+If the repository is new:
+Shellgit branch -M mainShow more lines
+Then push:
+Shellgit push -u origin mainShow more lines
+If your SSH key is set correctly, your files will be uploaded instantly.
+
+🎉 DONE! Your files are now uploaded to your new GitHub account.+++++
+
+
++++++++++++++++++++++++++++++++++++
+
+
+
+git config --global user.name "Anshu-2-git"
+git config --global user.email "anshudevops2012@gmail.com"
+
+
